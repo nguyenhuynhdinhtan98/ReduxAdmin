@@ -1,6 +1,6 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   return (
@@ -17,10 +17,15 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
+          {this.props.dulieu}
         </a>
       </header>
     </div>
   );
 }
-
-export default App;
+const mapStateToProps = (state, ownProps) => {
+  return {
+    dulieu: state.num
+  };
+};
+export default connect(mapStateToProps)(App);
